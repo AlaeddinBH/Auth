@@ -1,0 +1,5 @@
+{
+    "db": "mongodb+srv://Alaeddin:123456A@cluster0.exuggxh.mongodb.net/Auth_ws?retryWrites=true&w=majority",
+    "PORT": 8000,
+    "secret": "shhh"
+}
