@@ -1,18 +1,114 @@
-<Form onSubmit={handelSubmit}>
-              {
-                loading ? <h1>loading...</h1>
-                : localStorage.getItem('token') ? <Navigate to="/profil"></Navigate>
-                : 
-                <>
-              <Form.Group className = "mb-2" >
-              <Form.Label> Email address </Form.Label> 
-              <Form.Control type = "email"placeholder = "Enter email" value={email} onChange={(e)=> setEmail(e.target.value)}/>
-              </Form.Group>
-              <Form.Group className = "mb-3" >
-              <Form.Label > Password </Form.Label> 
-              <Form.Control type = "password" placeholder = "Password" P/>
-              </Form.Group> 
-              <Button variant = "primary" type = "submit" > LogIn </Button> 
-              </>
-              }
-              </Form> 
+<ThemeProvider theme={theme} >
+            <Grid container component="main" >
+            <CssBaseline />
+              <Grid item xs={12}
+                sm={2}
+                md={16}
+                component={Paper}
+                elevation={0}
+                square
+              >
+                <Box
+                  sx={{
+                    my: 4,
+                    mx: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                  }}
+                >
+                  
+                  <Typography component="h1" variant="h5">
+                    Ajouter un article
+                  </Typography>
+                  <Box
+                    component="form"
+                    noValidate
+                    onSubmit={handelSubmit}
+                    sx={{mt: 2,
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                    }}
+                  >
+                    <TextField
+                      margin="normal"
+                      required
+                      label="Code Article"
+                      name="Code"
+                      autoFocus
+                      size="small"
+                      sx={{ m: 1, width: '25ch' }}
+                      value={code}
+                      onChange={(e) => setCode(e.target.value)}
+                    />
+                    <TextField
+                      margin="normal"
+                      required
+                      name="name"
+                      label="Nom Article"
+                      type="name"
+                      size="small"
+                      sx={{ m: 1, width: '25ch' }}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <TextField
+                      margin="normal"
+                      required
+                      name="Description"
+                      label="Description Article"
+                      type="Description"
+                      size="small"
+                      sx={{ m: 1, width: '25ch' }}
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                    />
+                    <TextField
+                      margin="normal"
+                      required
+                      name="Prix"
+                      label="Prix Article"
+                      type="Prix"
+                      size="small"
+                      sx={{ m: 1, width: '25ch' }}
+                      InputProps={{
+                        endAdornment: <InputAdornment position="end">dt</InputAdornment>,
+                      }}
+                      value={price}
+                      onChange={(e) => setPrice(e.target.value)}
+                    />
+                    <TextField
+                      margin="normal"
+                      required
+                      name="Stock"
+                      label="Quantité Stock"
+                      type="Stock"
+                      size="small"
+                      sx={{ m: 1, width: '25ch' }}
+                      value={stock}
+                      onChange={(e) => setStock(e.target.value)}
+                    />
+                    <TextField
+                      margin="normal"
+                      required
+                      name="Stock Min"
+                      label="Stock Min"
+                      type="Stock Min"
+                      size="small"
+                      sx={{ m: 1, width: '25ch' }}
+                      value={minStock}
+                      onChange={(e) => setMinStock(e.target.value)}
+                    />
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      sx={{mt: 3, mb: 2}}
+                    >save
+                    </Button>
+                  </Box>
+                </Box>
+              </Grid>
+            </Grid>
+          </ThemeProvider>

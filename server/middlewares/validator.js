@@ -14,10 +14,21 @@ exports.loginRules = () => [
      check('password','password is required').notEmpty(),
 ];
 
+exports.productRules = () => [
+     check('code', 'Code is required').notEmpty(),
+     check('name', 'Nom is required').notEmpty(),
+     check('price', 'Prix should be a number').isNumeric(),
+     check('stock', 'Stock should be a number').isNumeric(),
+     check('minStock', 'min Stock should be a number').isNumeric(),
+];
+
 exports.validator = (req, res, next) => {
      const errors = validationResult(req);
      errors.isEmpty()? next() : res.status(406).json({errors:errors.array()});
+     // errors.isNumeric()? next() : res.status(406).json({errors:errors.array()});
 };
+
+
 
 
 

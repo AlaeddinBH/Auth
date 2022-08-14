@@ -1,11 +1,14 @@
 const express = require("express");
 const ConnectionDB = require("./config/ConnectionDB");
 const config = require("config");
-const user = require('./routes/user')
+const user = require('./routes/user');
+const product = require("./routes/product");
 
 const app = express();
 app.use(express.json());
 app.use('/user', user);
+app.use('/product', product);
+
 
 ConnectionDB();
 

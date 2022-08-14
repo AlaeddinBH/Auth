@@ -15,6 +15,9 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
+import CircularProgress from '@mui/material/CircularProgress';
+
+
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -32,6 +35,8 @@ const SignIn = () => {
     setEmail('');
     setPassword('');
   };
+
+ 
 
   function Copyright(props) {
     return (
@@ -53,7 +58,11 @@ const SignIn = () => {
   return (
     <div>
       {
-       loading ?  <h1>loading...</h1> 
+       loading ?  <>   
+       <Box sx={{ display: 'flex' }}>
+       <CircularProgress />
+       </Box>
+       </>
       : localStorage.getItem('token') ?  <Navigate to="/profil"></Navigate> 
       : 
         <>
@@ -140,7 +149,7 @@ const SignIn = () => {
                         <Link href="#" variant="body2"></Link>
                       </Grid>
                       <Grid item>
-                        <Link href="/" variant="body2">
+                        <Link href="/" variant="body2" >
                           {"Don't have an account? Sign Up"}
                         </Link>
                       </Grid>

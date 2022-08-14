@@ -6,7 +6,7 @@ const secret = config.get('secret');
 
 
 exports.register = async(req, res) => {
-    const {fullName, email, password} = req.body;
+    const {fullName, email, password, registerDate, userRole} = req.body;
     const existantUser = await user.findOne({email});
     if (existantUser) return res.status(409).json({msg:'User already exists'});
     try {
@@ -14,6 +14,8 @@ exports.register = async(req, res) => {
             fullName,
             email,
             password,
+            registerDate,
+            userRole,
         });
         let salt = await bcrypt.genSalt(10);
         let hash = await bcrypt.hash(password, salt);
@@ -29,6 +31,8 @@ exports.register = async(req, res) => {
                 id: newUser._id,
                 fullName: newUser.fullName,
                 email: newUser.email,
+                registerDate: newUser.registerDate,
+                userRole: newUser.userRole,
             }
         })
         //res.status(200).json(newUser);

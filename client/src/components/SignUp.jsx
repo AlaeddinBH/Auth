@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {regUser} from '../redux/action';
 import {Navigate} from 'react-router-dom';
-
+import CircularProgress from '@mui/material/CircularProgress';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -20,7 +20,7 @@ const SignUp = () => {
   const [fullName, setfullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const {loading, user} = useSelector((state) => state);
+  const {loading, user} = useSelector((state) => state.reducer);
 
   const dispatch = useDispatch();
 
@@ -57,13 +57,17 @@ const SignUp = () => {
   return (
     <div>
       {loading ? 
-        <h1>loading...</h1>
-       : user ? 
-        <Navigate to="/signin"></Navigate>
+         <>   
+        <Box sx={{ display: 'flex' }}>
+        <CircularProgress />
+        </Box>
+        </>
+      //  : user ? 
+      //   <Navigate to="/signin"></Navigate>
        : 
         <>
           <ThemeProvider theme={theme}>
-            {/* <Container component="main" maxWidth="xs"> */}
+             <Container component="main" maxWidth="xl"> 
             <Grid container component="main" sx={{height: '100vh'}}>
               <CssBaseline />
               <Grid item xs={false} sm={4} md={7} sx= {{
@@ -77,7 +81,7 @@ const SignUp = () => {
                   backgroundPosition: 'center',
                 }}
               />
-              <Grid item xs={12}
+              <Grid item xs={10}
                 sm={8}
                 md={5}
                 component={Paper}
@@ -86,7 +90,8 @@ const SignUp = () => {
               >
               <Box
                 sx={{
-                  marginTop: 8,
+                  my: 8,
+                  mx: 4,
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -102,7 +107,7 @@ const SignUp = () => {
                   component="form"
                   noValidate
                   onSubmit={handelSubmit}
-                  sx={{mt: 3}}
+                  sx={{mt: 1}}
                 >
                   <Grid container spacing={2}>
                     <Grid item xs={12}>
@@ -164,7 +169,7 @@ const SignUp = () => {
               <Copyright sx={{mt: 5}} />
               </Grid>
               </Grid>
-            {/* </Container> */}
+             </Container> 
           </ThemeProvider>
         </>
       }

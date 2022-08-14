@@ -3,7 +3,7 @@ import {LOGIN, LOGIN_FAIL, LOGIN_SUCCES, LOGOUT, PROFIL, PROFIL_FAIL, PROFIL_SUC
 const init = {
     loading: false,
     errors: null,
-    user: null,
+    user: [],
     token:null,
     isAuth: false,
 };
