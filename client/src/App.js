@@ -5,6 +5,7 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import Profil from './components/Profil';
 import ProductList from './components/Product/ProductList';
+import ContactForm from './components/ContactUs/ContactForm';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
           <Route path='/signin' element={<SignIn/>} />          
           <Route path='/profil' element={<Profil/>} /> 
           <Route path='/product' element={<ProductList/>} />
-          
+          <Route path='/contact' element={<ContactForm/>}/>  
         </Routes>
         </div>
       </BrowserRouter>

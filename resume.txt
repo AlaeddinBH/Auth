@@ -1,0 +1,107 @@
+
+
+web dev:
+
+front-end/back-end
+
+front-end
+---
+HTML
+---
+Hypertext Markup Language: skeleton
+tags : semantic: header,main,img,p , 
+non-semantic: div    ===> SEO : search engine optimizer
+
+CSS
+---
+Cascading Style Sheets: styling the web page/application
+tagName, className, id
+css property : !important >inline styling>id>class>tag
+responsive design: styling responsive to device size , laptop, phone etc...
+media query : length of device  ==> styling (ex:display:flex)
+flexbox/grid : css properties used in responsive design
+
+
+JS
+---
+JavaScript: programming language for web development
+vanilla web apps (html css js)
+DOM : Document Object Modeling 
+DOM is created by the browser
+DOM selectors are: getElementsByTagName getElementsByClassName getElementById querySelector querySelectorAll
+DOM events: actions that occur in the web page
+event-listeners ex: click, mouseover, mouse up, mousedown, key press, change, submit
+on changes, DOM is repainted
+React/vue/angular/flutter
+React
+--
+JS library, used for UI creation
+features of React are: virtual DOM,JSX,one-way data flow,component-based,simplicty,performance
+*virtual DOM:
+React DOM : changes that occur affect the virtual DOM,comparison between virtual DOM and real DOM happens
+and the changes are implemented in the real DOM without repainting important
+
+*JSX: extension JS, superpowered HTML that includes JS functionalities
+
+*one-way data flow: data moves from parent to children (props)
+-props: properties are objects that contain immutable data passed from parent component to child component
+-state: contains mutable data
+-hooks: functions that added class based component features to function based components (mounting,updating...)
+-Router: since we work with single paged applications, we need a tool for component navigation
+
+
+Redux
+---
+state management library for JS: the larger the project the more we need state management
+to avoid props drilling
+store: contains the global state
+components dispatch actions, reducers read these actions and apply changes to the global state in the store
+
+
+
+API
+---
+application programming interface
+API carries client requests to the server and brings back a responsive
+client requests : POST GET PUT DELETE
+responses carry a status code: 1xx-5xx
+and data(JSON:JavaScript Object Notation)/error messages
+
+
+Back-end
+---
+NodeJs
+ExpressJs
+MongoDB
+
+
+NodeJs
+---
+runtime environment for js: allows us to write server-side js code
+
+ExpressJs
+--
+framework for NodeJs that does the heavy lifting
+
+MongoDB:
+--
+NOSQL database : documents instead of tables
+
+Mongoose:
+MongoDB driver: database manipulation in the application
+
+
+server folder structure:
+config
+server
+models
+routes
+controllers
+middlewares
+
+modele MVC (model view controller)
+
+
+
+
+

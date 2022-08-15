@@ -13,7 +13,7 @@ const Sidebar = () => {
       <a className="menu-item" href="/Product">
         Articles
       </a>
-      <a className="menu-item" href="/#">
+      <a className="menu-item" href="/Contact">
         Nous Contactez
       </a>
     </Menu>
